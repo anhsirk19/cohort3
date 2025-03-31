@@ -9,7 +9,7 @@ const { auth, JWT_SECRET } = require("./auth");
 const mongoose = require("mongoose");
 
 const bcrypt = require("bcrypt");
-mongoose.connect("mongodb+srv://krishna:krishna@cluster0.cjxsr.mongodb.net/todo-app-database");
+mongoose.connect("");
 
 const {UserModel, TodoModel} = require("./db");
 
