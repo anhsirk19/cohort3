@@ -1,0 +1,51 @@
+<body>
+    <input type="text">
+    <button onclick="addTodo()">Add todo!</button>
+    <button onclick="deleteLast()">DeleteLast</button>
+    <button onclick="deleteFirst()">DeleteFirst</button>
+    <div id="to"></div>
+    <script>
+      let todos = [];
+      function addTodo() {
+        todos.push({
+          title: document.querySelector("input").value
+        })
+        render();
+      }
+
+      function deleteFirst(){
+        todos.splice(0,1);
+        render();
+      }
+      function deleteLast(){
+        todos.splice(todos.length - 1, 1);
+        render();
+      }
+  
+      function deleteTodo() {
+        todos.pop();
+        render();
+      }
+
+
+      function todoComponent(todo){
+        const div = document.createElement("div");
+        const h1 = document.createElement("h1");
+        const button = document.createElement("button");
+        button.innerHTML = "Delete";
+        h1.innerHTML = todo.title;
+        div.appendChild(h1);
+        div.appendChild(button);
+        return div;
+      }
+
+      //this functionality is given by react like libraries
+      function render() {
+        document.querySelector("#to").innerHTML = "";
+        for(let i = 0 ; i < todos.length ; i++){
+            const element = todoComponent(todos[i]);
+            document.querySelector("#to").appendChild(element);
+        }
+    }
+    </script>
+  </body>

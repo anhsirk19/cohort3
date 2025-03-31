@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <h1>Todo list</h1>
+  <div id="todos">
+
+  </div>
+  <div>
+    <input id="inp" type="text">
+    <button onclick="addTodo()">Add Todo</button>
+  </div>
+</body>
+
+<script>
+  let index = 1;
+  function addTodo() {
+    const inputE = document.getElementById("inp");
+    const val = inputE.value.trim();
+    const parentNode = document.getElementById("todos");
+
+    if (val === '') {
+      alert('Please enter a todo item.');
+      return;
+    }
+
+    const newElement = document.createElement("div");
+    newElement.setAttribute("id", "todo-" + index);
+
+    const newHeading = document.createElement("h4");
+    newHeading.textContent = index + ". " + val;
+
+    const newButton = document.createElement("button");
+    newButton.setAttribute("onclick", "deleteTodo(" + index + ")");
+    newButton.textContent = "delete";
+
+    newElement.appendChild(newHeading);
+    newElement.appendChild(newButton);
+
+    parentNode.appendChild(newElement);
+
+    index++;
+
+    inputE.value = '';
+
+  }
+
+  function deleteTodo(index) {
+    const element = document.getElementById("todo-" + index);
+    if(element){
+      element.parentNode.removeChild(element);
+    }
+  }
+
+  
+</script>
+
+</html>
