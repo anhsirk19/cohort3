@@ -50,7 +50,7 @@ function Landing(){
 
 function ErrorPage(){
   return <div>
-    no such rotes available 
+    no such rotes available
   </div>
 }
 
@@ -65,7 +65,7 @@ function Class11Program(){
       console.log("unmount");
       clearInterval(timer);
     }
-  }, []);
+  }, [navigate]);
   return <div>
     class 11 online programs
   </div>
