@@ -34,6 +34,7 @@ const App = () => {
 
 const Content1 = () =>{
     throw new Error("I crashed!");
+  // eslint-disable-next-line no-unreachable
   return (
     <div>
       <h2>Card Title</h2>
@@ -59,6 +60,7 @@ class ErrorBoundary extends React.Component {
         this.state = { hasError: false };
     }
 
+    // eslint-disable-next-line no-unused-vars
     static getDerivedStateFromError(error) {
         return { hasError: true };
     }
@@ -72,7 +74,7 @@ class ErrorBoundary extends React.Component {
             return <h1>Something went wrong.</h1>;
         }
 
-        return this.props.children; 
+        return this.props.children;
     }
 }
 
