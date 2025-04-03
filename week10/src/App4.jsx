@@ -14,8 +14,8 @@ function App(){
         intervalRef.current = null;
     }
     function reset(){
+        off(); // Stops the timer and ensures interval is cleared
         setTimer(0);
-        intervalRef.current = null;
     }
     return <div>
         <h1>Timer </h1>
