@@ -24,9 +24,9 @@ function App() {
 function Layout(){
   return <div style={{height : "100vh", background : "skyblue"}}>
     <Header/>
-    <div style={{height : "90vh", background : "gray"}}>
+    <div style={{height : "90vh"}}>
     <Outlet />
-
+  
     </div>
     footer
   </div>
